@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./styles/navbar.css" />
+    <link rel="stylesheet" href="./styles/product1.css" />
+    <link rel="stylesheet" href="./styles/footer.css" />
+  </head>
+  <body>
+    <div id="navbar"></div>
+
+    <div class="main_div">
+      <div class="images_div">
+        <div class="img_div"></div>
+        <div class="site_div">
+          <img
+            src="https://image.shutterstock.com/image-photo/kiev-ukraine-april-27-2015-260nw-278925056.jpg"
+          />
+          <img
+            src="https://www.pngfind.com/pngs/m/288-2884553_facebook-icon-google-icon-black-png-transparent-png.png"
+          />
+          <img
+            src="data:image/png;base64,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"
+          />
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Linkedin.svg/1200px-Linkedin.svg.png"
+          />
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHewP3ox0KUfJML_JgHAnH3iDDZXeo73Nduw&usqp=CAU"
+          />
+          <img
+            src="https://play-lh.googleusercontent.com/wIf3HtczQDjHzHuu7vezhqNs0zXAG85F7VmP7nhsTxO3OHegrVXlqIh_DWBYi86FTIGk"
+          />
+        </div>
+      </div>
+      <div class="data_div">
+        <div class="des_div"></div>
+        <div class="price_div"></div>
+        <div class="add_div">
+          <p>SHIPPING</p>
+          <p>Ships to</p>
+          <p>United States</p>
+          <p>from</p>
+          <p>China</p>
+          <p>Via</p>
+          <p>JD-STANDARD</p>
+          <span class="material-icons"> expand_more </span>
+        </div>
+        <div class="del_time">
+          <p>Free Shipping</p>
+          <p>Ships within 7 days, Delivery estimate: 99~9999 days</p>
+        </div>
+        <div class="qty">
+          <p>QTY</p>
+          <p class="minus">-</p>
+          <input type="text" placeholder="1" />
+          <p class="plus">+</p>
+          <p>in stock</p>
+        </div>
+        <div class="add_buy">
+          <button class="btn1">ADD TO CART</button>
+          <button class="btn2">BUY IT NOW</button>
+        </div>
+
+        <div class="comp_logo">
+          <p>PAYMENT</p>
+          <img
+            src="https://img10.joybuy.com/tuangou/jfs/t1/94175/32/2687/49638/5dd39132E6b117af4/a0445d7f7ebb2ee6.png"
+          />
+        </div>
+        <div class="return_policy">
+          <h2>RETURN POLICY</h2>
+          <p>
+            The returns policy applies to specific items.<br />
+            For a 30-day return due to quality issues:<br />
+            - Items must be returned with all gifts and accessories.<br />
+            - The buyer will not need to pay for return shipping costs and
+            customs duties.<br />
+            Refund amount and methods may vary according to the item's
+            condition, date of purchase, and payment method.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="threeimg">
+      <img
+        src="https://img10.joybuy.com/img/jfs/t1/109692/30/16072/356489/60b729feE87614970/27810d730b4da33d.jpg.dpg"
+      />
+      <img
+        src="https://img10.joybuy.com/img/jfs/t1/190517/15/6117/292687/60b729feEe3e6a2fc/7c75bbbe61a8e6fc.jpg.dpg"
+      />
+      <img
+        src="https://img10.joybuy.com/img/jfs/t1/184109/11/6967/255736/60b729feE6a91084c/4c97cdad74e056d1.jpg.dpg"
+      />
+    </div>
+
+    <div class="footer"></div>
+    <div class="popup">
+      <span class="material-icons close"> close </span>
+      <div>
+        <span class="material-icons"> check_circle </span>
+        <p>Added to your shopping cart!</p>
+      </div>
+      <p class="items"></p>
+      <div>
+        <button>View shopping cart</button><button>continue shopping</button>
+      </div>
+    </div>
+    <script type="module">
+      var nav = document.getElementById("navbar");
+      var footers = document.querySelector(".footer");
+      import { navbar } from "./components/navbar.js";
+      import { footer } from "./components/footer.js";
+
+      nav.innerHTML = navbar();
+      footers.innerHTML = footer();
+
+      let loginBtn = document.querySelector(".loginBtn");
+      let signupBtn = document.querySelector(".signupBtn");
+      loginBtn.addEventListener("click", () => {
+        window.location.href = "login.html";
+      });
+      signupBtn.addEventListener("click", () => {
+        window.location.href = "signup.html";
+      });
+
+      var img_div = document.querySelector(".img_div");
+      var des_div = document.querySelector(".des_div");
+      var price_div = document.querySelector(".price_div");
+
+      var datas = localStorage.getItem("eleData");
+      var data = JSON.parse(datas);
+
+      var images = document.createElement("img");
+      var price = document.createElement("h1");
+      var descrip = document.createElement("h2");
+
+      images.src = data.img;
+
+      price.innerText = `Price : $${data.pri}`;
+      price.style.color = "red";
+
+      descrip.innerText = data.desc;
+
+      img_div.append(images);
+      des_div.append(descrip);
+      price_div.append(price);
+
+      let count = 1;
+      let plus = document.querySelector(".plus");
+      let minus = document.querySelector(".minus");
+      let input = document.querySelector(".qty input");
+      plus.addEventListener("click", () => {
+        if (count < 10) {
+          input.value = ++count;
+        }
+      });
+      minus.addEventListener("click", () => {
+        if (count > 1) {
+          count--;
+          input.value = count;
+        }
+      });
+
+      var btn1 = document.querySelector(".add_buy .btn1");
+      var btn2 = document.querySelector(".add_buy .btn2");
+      var cart = document.querySelector(".popup .items");
+      var popup = document.querySelector(".popup");
+      var close = document.querySelector(".popup .close");
+
+      var counter = 0;
+      // var arrData = JSON.stringify(arr);
+      // localStorage.setItem("cartData", arrData);
+      var arr = JSON.parse(localStorage.getItem("cartData")) || [];
+      btn1.addEventListener("click", () => {
+        counter++;
+        popup.style.display = "block";
+        cart.textContent = `${counter} items in your cart now!`;
+        var value = true;
+        for (var i = 0; i < arr.length; i++) {
+          if (arr[i].desc == data.desc) {
+            value = false;
+            break;
+          }
+        }
+        if (value == true) {
+          input = document.querySelector(".qty input");
+          arr.push(data);
+          var t = JSON.parse(localStorage.getItem(`dataplus`));
+
+          localStorage.setItem(`dataplus`, +input.value + t);
+          localStorage.setItem(`datapluses${arr.length - 1}`, +input.value);
+
+          let p = JSON.stringify(arr);
+          localStorage.setItem("cartData", p);
+        }
+      });
+      btn2.addEventListener("click", () => {
+        window.location.href = "login.html";
+      });
+      close.addEventListener("click", () => {
+        popup.style.display = "none";
+      });
+    </script>
+  </body>
+</html>

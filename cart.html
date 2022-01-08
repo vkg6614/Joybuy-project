@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/navbar.css" />
+    <link rel="stylesheet" href="./styles/footer.css" />
+    <link rel="stylesheet" href="./styles/cart.css" />
+
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="navbar"></div>
+    <h1 class="h1">Shopping cart</h1>
+    <div class="main-div">
+      <div class="heading_div">
+        <div class="select-all">
+          <input type="radio" />
+          <p>Select all(4)</p>
+        </div>
+        <p>Price</p>
+        <p>Quantity</p>
+      </div>
+      <div class="data_div"></div>
+      <div class="continue_div">
+        <div class="select-all">
+          <input type="radio" />
+          <p>Select all</p>
+        </div>
+        <div class="delete">
+          <button>Delete</button>
+          <button>Clear Cart</button>
+        </div>
+        <div class="prices">
+          <p>Discount-US$0.00</p>
+          <p>Total(1 item): US$313.31</p>
+        </div>
+        <button class="cont_btn">Continue</button>
+      </div>
+    </div>
+    <div class="footer"></div>
+
+    <script type="module">
+      var nav = document.getElementById("navbar");
+      var footers = document.querySelector(".footer");
+      import { navbar } from "./components/navbar.js";
+      import { footer } from "./components/footer.js";
+
+      nav.innerHTML = navbar();
+      footers.innerHTML = footer();
+      var data = JSON.parse(localStorage.getItem("cartData"));
+
+      var data_div = document.querySelector(".data_div");
+
+      var continue_div = document.querySelector(".continue_div");
+      var heading_div = document.querySelector(".heading_div");
+      var main_div = document.querySelector(".main-div");
+
+      data.forEach((ele, val) => {
+        var counter_div = document.createElement("div");
+        counter_div.setAttribute("class", "counter_div");
+        var pminus = document.createElement("p");
+        pminus.innerText = "-";
+        var inputdata = document.createElement("input");
+
+        inputdata.value =
+          JSON.parse(localStorage.getItem(`datapluses${val}`)) || 1;
+        var pplus = document.createElement("p");
+        pplus.innerText = "+";
+        counter_div.append(pminus, inputdata, pplus);
+
+        var delete_div = document.createElement("div");
+        delete_div.setAttribute("class", "delete_div");
+        var span1 = document.createElement("span");
+        span1.setAttribute("class", "material-icons");
+        span1.innerText = "favorite";
+        var span2 = document.createElement("span");
+        span2.setAttribute("class", "material-icons");
+        span2.innerText = "delete";
+        delete_div.append(span1, span2);
+
+        var append_div = document.createElement("div");
+        append_div.setAttribute("class", "append_div");
+
+        // left_div
+        var input_div = document.createElement("div");
+        input_div.setAttribute("class", "select-all");
+        var input = document.createElement("input");
+        input.setAttribute("type", "radio");
+        input_div.append(input);
+
+        var img_div = document.createElement("div");
+        img_div.setAttribute("class", "img_div");
+        var image = document.createElement("img");
+        image.src = ele.img;
+        img_div.append(image);
+
+        var desc_div = document.createElement("div");
+        desc_div.setAttribute("class", "desc_div");
+        var descp = document.createElement("p");
+        descp.textContent = ele.desc;
+        desc_div.append(descp);
+
+        var left_div = document.createElement("div");
+        left_div.setAttribute("class", "left_div");
+        left_div.append(input_div, img_div, desc_div);
+        // left_div
+
+        var pri_div = document.createElement("div");
+        pri_div.setAttribute("class", "pri_div");
+        var prip = document.createElement("p");
+        prip.textContent = `US$${ele.pri}`;
+        pri_div.append(prip);
+
+        append_div.append(left_div, pri_div, counter_div, delete_div);
+
+        localStorage.setItem(`datapluses${val}`, inputdata.value);
+
+        var k = JSON.parse(localStorage.getItem(`datapluses`));
+
+        delete_div.addEventListener("click", () => {
+          append_div.style.display = "none";
+
+          var d = JSON.parse(localStorage.getItem("cartData"));
+          var tot = JSON.parse(localStorage.getItem(`dataplus`));
+          var p = JSON.parse(localStorage.getItem(`dataplus${val}`));
+          localStorage.setItem("dataplus", tot - inputdata.value);
+          localStorage.removeItem(`datapluses${val}`);
+
+          var changeArr = d.filter((item) => item.desc != ele.desc);
+          var array = JSON.stringify(changeArr);
+          localStorage.setItem("cartData", array);
+          var t = JSON.parse(localStorage.getItem("cartData"));
+          if (t.length == 0) {
+            localStorage.removeItem("dataplus");
+            var h2Tag = document.createElement("h1");
+            h2Tag.innerText = "Your Cart is Empty";
+            h2Tag.style.textAlign = "center";
+            var data_div = document.querySelector(".data_div");
+            data_div.append(h2Tag);
+          } else {
+            h2Tag.style.display = "none";
+          }
+        });
+
+        var t = JSON.parse(localStorage.getItem("cartData"));
+        var d = JSON.parse(localStorage.getItem("dataplus"));
+        if (t.length > d) {
+          localStorage.setItem("dataplus", t.length);
+        } else {
+          localStorage.setItem("dataplus", d);
+        }
+        var count = JSON.parse(localStorage.getItem(`datapluses${val}`)) || 1;
+
+        pplus.addEventListener("click", () => {
+          d = JSON.parse(localStorage.getItem("dataplus"));
+          count++;
+          inputdata.value = count;
+          localStorage.setItem("dataplus", ++d);
+
+          localStorage.setItem(`datapluses${val}`, inputdata.value);
+        });
+
+        pminus.addEventListener("click", () => {
+          d = JSON.parse(localStorage.getItem("dataplus"));
+
+          inputdata.value = --count;
+          localStorage.setItem("dataplus", --d);
+          localStorage.setItem(`datapluses${val}`, inputdata.value);
+        });
+        data_div.append(append_div);
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Joybuy</title>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./styles/navbar.css" />
+    <link rel="stylesheet" href="./styles/all.css" />
+    <link rel="stylesheet" href="./styles/footer.css" />
+  </head>
+  <body>
+    <div id="right-sticky">
+      <span class="material-icons"> shopping_cart </span>
+      <span class="material-icons"> card_giftcard </span>
+      <span class="material-icons"> favorite_border </span>
+      <span class="material-icons"> mark_email_unread </span>
+      <span class="material-icons"> message </span>
+
+      <span class="material-icons"> aod </span>
+    </div>
+    <div id="index_div">
+      <div id="navbar">
+        <div class="top-div">
+          <div>
+            <p>
+              Ship to<img
+                class="flag"
+                src="https://www.merchantstronghold.com/currency/wp-content/uploads/2017/05/usd-1.png"
+              />US/USD
+            </p>
+            <span class="material-icons"> arrow_drop_down </span>
+          </div>
+          <div><a href="#">Quick Guide</a></div>
+          <div>
+            <p>Help</p>
+            <span class="material-icons"> arrow_drop_down</span>
+          </div>
+          <div><a class="media" href="#">Media and Investing</a></div>
+
+          <div>
+            <p class="sell">Sell With Us</p>
+            <span class="material-icons"> arrow_drop_down </span>
+          </div>
+          <div>
+            <p class="site">Site/Language</p>
+            <span class="material-icons"> arrow_drop_down </span>
+          </div>
+        </div>
+        <div class="mid-div">
+          <img
+            src="https://img10.joybuy.com/tuangou/jfs/t1/24107/24/11739/7795/5c924d58Eae30ea8a/815e2989f4164d36.png"
+          />
+          <div class="input-div">
+            <span>ALL</span
+            ><span class="material-icons border"> expand_more </span>
+            <input type="text" oninput="debounce(main,500)" class="input_box" />
+            <button class="searchBtn">
+              <span class="material-icons search"> search </span>
+            </button>
+          </div>
+          <div class="user-data">
+            <div>
+              <span class="material-icons"> shopping_cart </span>
+              <p class="cart">Cart</p>
+            </div>
+            <div>
+              <span class="material-icons"> perm_identity </span>
+              <p class="loginBtn">Log in</p>
+            </div>
+            <p class="signupBtn">Sign up</p>
+          </div>
+          <div class="oninput_div"></div>
+        </div>
+        <div class="bottom-div">
+          <div class="leftDiv">
+            <div class="hamburgers">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+            <p>Catogories</p>
+            <span class="material-icons"> arrow_drop_down </span>
+          </div>
+          <div class="content">
+            <p>Wholesale Zone</p>
+            <p>Super Deals</p>
+            <p>Xiaomi Zone</p>
+            <p>Joy Collection</p>
+          </div>
+        </div>
+      </div>
+      <div class="sliderDiv">
+        <div class="left btn">
+          <span class="material-icons"> chevron_left </span>
+        </div>
+        <div class="right btn">
+          <span class="material-icons"> navigate_next </span>
+        </div>
+        <div class="slide-container">
+          <div class="image1">
+            <img
+              src="https://img10.joybuy.com/tuangou/jfs/t1/205803/18/1980/366730/611df866E434c3766/652f422b1ab41feb.png"
+            />
+          </div>
+          <div class="image2">
+            <img
+              src="https://img10.joybuy.com/tuangou/jfs/t1/172419/30/9219/242686/609b4efeEbe1fa4c1/076d275018781495.png"
+            />
+          </div>
+          <div class="image3">
+            <img
+              src="https://img10.joybuy.com/tuangou/jfs/t1/191183/14/697/155057/608bab08Ed9d8a91c/a518902f19945e5c.png"
+            />
+          </div>
+          <div class="image4">
+            <img
+              src="https://img10.joybuy.com/tuangou/jfs/t1/182705/25/21164/121708/612881a1Ed2eeb96a/dcf557fb221043f6.png"
+            />
+          </div>
+          <div class="image5">
+            <img
+              src="https://img10.joybuy.com/tuangou/jfs/t1/198772/26/5090/72447/612881baE0b728c9f/8c9fce7bbd228e71.png"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="all-contents">
+      <div class="more_div">
+        <p>More</p>
+        <span class="material-icons"> navigate_next </span>
+      </div>
+      <div class="contents"></div>
+    </div>
+    <!-- start condition -->
+    <div class="conditions">
+      <h1>Discover Joybuy</h1>
+      <div class="condition">
+        <div class="condition1">
+          <div>
+            <span class="material-icons"> airport_shuttle </span>
+            <span>FREE DELIVERY</span>
+            <span class="material-icons"> navigate_next </span><br />
+          </div>
+          <p>
+            Free shopping on Joy<br />
+            Collection
+          </p>
+        </div>
+        <div class="condition2">
+          <div>
+            <span class="material-icons"> monetization_on </span>
+            <span>SECURE PAYMENTS</span>
+            <span class="material-icons"> navigate_next </span>
+          </div>
+          <p>
+            Pay with popular and<br />
+            secure payment methods
+          </p>
+        </div>
+        <div class="condition3">
+          <div>
+            <span class="material-icons"> calendar_today </span>
+            <span>30 DAYS RETURN POLICY</span>
+            <span class="material-icons"> navigate_next </span>
+          </div>
+          <p>You may return within 30<br />days upon receipt</p>
+        </div>
+        <div class="condition4">
+          <div>
+            <span class="material-icons"> local_convenience_store </span>
+            <span>24/7 CUSTOMER SERVICE</span>
+            <span class="material-icons"> navigate_next </span>
+          </div>
+          <p>
+            We'ill respond to you<br />
+            within 24 hours
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- start featured categories -->
+    <div class="categories">
+      <h1>Featured Categories</h1>
+      <div class="category">
+        <div>
+          <p>Home & Garden</p>
+          <img
+            src="https://img10.joybuy.com/tuangou/jfs/t1/24192/19/11810/22988/5c924e08E825a8d02/dd97407a37c665b9.png"
+          />
+        </div>
+        <div>
+          <p>Consumer Electronics</p>
+          <img
+            src="https://img10.joybuy.com/tuangou/jfs/t1/10246/39/15389/7310/5c924e00Ec7fa82a1/cc48c292d2209ae3.png"
+          />
+        </div>
+        <div>
+          <p>Home Appliances</p>
+          <img
+            src="https://img10.joybuy.com/tuangou/jfs/t1/32123/12/6730/8783/5c924df9Ead18d750/411f843c88096325.png"
+          />
+        </div>
+        <div>
+          <p>Phone & Accessories</p>
+          <img
+            src="https://img10.joybuy.com/tuangou/jfs/t1/101652/7/13058/12763/5e536a55E66d43bdd/ee7b39ab59a64f7a.png"
+          />
+        </div>
+        <div>
+          <p>Hair Extensions</p>
+          <img
+            src="https://img10.joybuy.com/tuangou/jfs/t1/33078/24/6493/16474/5cbea3bdE7cc3f831/75776dccebacb410.png"
+          />
+        </div>
+        <div>
+          <p>Sports & Outdoors</p>
+          <img
+            src="https://img10.joybuy.com/tuangou/jfs/t1/20635/9/11726/9851/5c924e11Ea73cb61b/5a6b6699fea5a838.png"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- weekly start -->
+    <div class="weeklies">
+      <h1>Weekly Pics</h1>
+      <div class="weekly"></div>
+    </div>
+
+    <!--start popular reviews -->
+    <div class="populars">
+      <h1>Popular Reviews</h1>
+      <div class="popular">
+        <div>
+          <img
+            src="https://img10.joybuy.com/tuangou/jfs/t1/102893/23/11774/35489/5e3bdaa3Ecc260a94/f840e78fe238e220.png"
+          />
+          <p>CONFU Rechargeable Lint Remover</p>
+          <p>
+            This little device requires no batteries, one full charge can last
+            for several days of usage. It gently removes all the lint and fuzz
+            from clothes! Now all
+          </p>
+        </div>
+        <div>
+          <img
+            src="https://img13.joybuy.com/tuangou/jfs/t1/107987/11/5460/42419/5e3bdaaaE26703360/9d2704e086d4b761.png"
+          />
+          <p>Sony Waterproof All-in-1 MP3 Player</p>
+          <p>
+            Lightweight, compact, waterproof (IP68) - perfect for my workouts!
+            With 4GB of storage capacity, and supplied USB2.0 plug you can
+            easily drag and dro
+          </p>
+        </div>
+        <div>
+          <img
+            src="https://img10.joybuy.com/tuangou/jfs/t1/87390/25/11805/32546/5e3bdab0E107604d0/0a7f00471262c2de.png"
+          />
+          <p>OIWAS 14 Inch Casual Laptop<br />Backpack</p>
+          <p>
+            It'is made of waterproof nylon material and has many compartments
+            inside. The most special feature of this backpack is that you can
+            easily charge your
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="img">
+      <img
+        src="https://img10.joybuy.com/tuangou/jfs/t1/162077/35/12659/42866/604f0aa6Ecd230ada/0455a821dad8499b.png"
+      />
+    </div>
+
+    <div class="footer">
+      <div class="top-footer">
+        <div>
+          <span class="material-icons icon"> topic </span>
+          <h3>Secure Payments</h3>
+          <p>Pay with secure payment methods</p>
+        </div>
+        <div>
+          <span class="material-icons"> 30fps </span>
+          <h3>30-day Return Policy</h3>
+          <p>
+            If your item is damaged or not as described, you may return it
+            within 30 days after delivery.
+          </p>
+        </div>
+        <div>
+          <span class="material-icons"> local_convenience_store </span>
+          <h3>24/7 Customer Service</h3>
+          <p>We'll respond to you within 24 hours</p>
+        </div>
+        <div>
+          <span class="material-icons"> flight </span>
+          <h3>Worldwide Delivery</h3>
+          <p>Covers more than 200 countries and regions worldwide</p>
+        </div>
+        <div>
+          <span class="material-icons"> shopping_bag </span>
+          <h3>International Brands</h3>
+          <p>Guaranteed authenticity</p>
+        </div>
+      </div>
+      <div class="about">
+        <h3>About Joybuy</h3>
+        <p>
+          Operated by Chinese ecommerce giant, JD.com, Joybuy offers online
+          shoppers a wide selection of smartphones, gaming laptops, consumer
+          electronics, women's clothing, stuffed toys, and more.
+
+          <br />As China’s largest ecommerce platform by revenue, JD.com offers
+          a world-class set of online shopping services to its legion of users,
+          who now number close to 200 million in total.
+
+          <br />JD.com listed on the NASDAQ in May 2014 in the exchange's
+          biggest flotation of that year.
+
+          <br />As a technology-driven company, JD.com has focused considerable
+          effort in developing a robust and scalable platform that not only
+          supports the company’s rapid growth, but also allows it to provide
+          cutting-edge technology and services to partners and customers.
+        </p>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="bottom-1">
+          <div>
+            <span>Get the app : </span
+            ><a href="#"
+              ><img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Available_on_the_App_Store_%28black%29.png/640px-Available_on_the_App_Store_%28black%29.png"
+            /></a>
+            <a href="#"
+              ><img
+                src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png?hl=zh-tw"
+            /></a>
+          </div>
+          <div>
+            <span>partners : </span
+            ><img
+              src="https://cdn.corporate.walmart.com/dims4/WMT/c2bbbe9/2147483647/strip/true/crop/2389x930+0+0/resize/1446x563!/quality/90/?url=https%3A%2F%2Fcdn.corporate.walmart.com%2Fd6%2Fe7%2F48e91bac4a8ca8f22985b3682370%2Fwalmart-logos-lockupwtag-horiz-blu-rgb.png"
+            />
+          </div>
+          <div>
+            <span>Verified by : </span
+            ><img
+              src="https://5.imimg.com/data5/RA/HV/KH/SELLER-74223244/pci-dss-certification-500x500.png"
+            />
+          </div>
+        </div>
+        <div class="bottom-2">
+          <div>
+            <span>Pay With : </span>
+            <img
+              src="https://img10.joybuy.com/devfe/jfs/t1/8057/2/9618/10950/5c18b9a1Ece528c5e/e94c7bad5e58109a.png"
+            />
+          </div>
+          <div>
+            <span>Sign up : </span
+            ><input
+              id="input-box"
+              type="text"
+              placeholder="enter your email address"
+            /><button>Subscribe</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./src/index.js"></script>
+  </body>
+</html>

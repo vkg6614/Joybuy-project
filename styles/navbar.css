@@ -1,0 +1,229 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Roboto Condensed", sans-serif;
+  position: relative;
+}
+#navbar .top-div {
+  display: inline-flex;
+  width: 93%;
+  font-size: 1.4rem;
+  justify-content: right;
+  margin: 0 auto;
+}
+#navbar .top-div div {
+  display: flex;
+  margin: 0.5em;
+  justify-content: center;
+  align-items: center;
+}
+.top-div .flag {
+  width: 20px;
+  margin-left: 0.2em;
+  margin-right: 0.4em;
+  height: 10px;
+}
+
+.top-div a {
+  text-decoration: none;
+  color: black;
+}
+
+.top-div div:hover,
+.top-div p:hover,
+.top-div a:hover {
+  color: red;
+}
+
+.top-div .media {
+  border-left: 1px solid black;
+  padding-left: 1em;
+}
+.top-div .site {
+  border-left: 1px solid black;
+  padding-left: 1em;
+}
+
+/* .mid-div start */
+.mid-div {
+  position: relative;
+  width: 90%;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  display: flex;
+}
+
+.input-div span {
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+.mid-div .input-div button {
+  padding: 5px;
+  cursor: pointer;
+  padding: 0 1em;
+  border: none;
+  background-color: rgb(227, 51, 51);
+}
+.input-div .search {
+  font-size: 3rem;
+  color: white;
+}
+.mid-div .input-div {
+  width: 48%;
+  background-color: rgb(219, 219, 219);
+  height: 38px;
+  padding-left: 1em;
+}
+
+.mid-div .input-div .border {
+  border-right: 1px solid black;
+  padding-right: 0.8em;
+}
+.mid-div input {
+  width: 85%;
+  border: none;
+  outline: none;
+  background-color: rgb(219, 219, 219);
+}
+
+/* .oninut_div start */
+.oninput_div {
+  display: none;
+  flex-direction: column;
+  width: 44.3%;
+  position: absolute;
+  z-index: 10;
+  background-color: white;
+  top: 3em;
+  left: 21.7%;
+}
+.oninput_div p {
+  width: 100%;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.mid-div div {
+  display: flex;
+  align-items: center;
+}
+.mid-div .user-data {
+  display: flex;
+  font-size: 1.5rem;
+  margin-right: 3.5em;
+}
+.mid-div .user-data div {
+  margin: 0.7em;
+}
+.user-data .loginBtn {
+  cursor: pointer;
+  border-right: 1px solid black;
+  padding-right: 1em;
+}
+.user-data .signupBtn {
+  cursor: pointer;
+}
+.user-data span {
+  color: red;
+  margin-right: 0.3em;
+}
+.user-data p:hover,
+.user-data div:hover {
+  color: red;
+}
+
+/* .bottom div start */
+.bottom-div {
+  display: flex;
+  width: 90%;
+  margin: 5px auto;
+}
+
+.bottom-div .leftDiv {
+  display: flex;
+  width: 22%;
+  align-items: center;
+}
+
+.bottom-div .leftDiv p {
+  margin-left: 1em;
+  font-size: 1.8rem;
+  margin-right: 1em;
+}
+.hamburgers div {
+  width: 25px;
+  height: 2px;
+  margin: 6px;
+  background-color: black;
+}
+.bottom-div .content {
+  display: flex;
+  align-items: center;
+}
+.bottom-div .content p {
+  font-size: 1.8rem;
+  margin-right: 1em;
+}
+
+.bottom-div .content p:hover {
+  color: red;
+  cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+  .mid-div .input-div {
+    width: 38%;
+  }
+}
+
+@media (max-width: 880px) {
+  .user-data div:nth-child(1) {
+    display: none;
+  }
+  #navbar .bottom-div .leftDiv p,
+  .bottom-div .content p {
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 768px) {
+  #navbar .user-data {
+    display: none;
+  }
+
+  #navbar .top-div {
+    display: none;
+  }
+  .mid-div .input-div {
+    width: 58%;
+  }
+  .bottom-div .hamburgers {
+    display: none;
+  }
+  #navbar .bottom-div .leftDiv p,
+  .bottom-div .content p {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 502px) {
+  #navbar .mid-div img {
+    display: none;
+  }
+  #navbar .mid-div {
+    display: flex;
+    justify-content: center;
+  }
+  #navbar .mid-div .input-div {
+    width: 90%;
+  }
+  #navbar .bottom-div {
+    display: none;
+  }
+}

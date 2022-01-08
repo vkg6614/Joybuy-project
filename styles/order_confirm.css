@@ -1,0 +1,213 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: rgb(237, 237, 237);
+  font-family: "Roboto Condensed", sans-serif;
+  position: relative;
+}
+#navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 2em 6em;
+  border-bottom: 2px solid red;
+}
+.process {
+  display: flex;
+}
+
+.process p {
+  color: white;
+  padding: 0.4em 2.5em;
+  margin-right: 0.4em;
+}
+
+.process p:nth-child(2) {
+  background-color: rgb(204, 204, 204);
+}
+
+.process p:nth-child(3) {
+  background-color: rgb(204, 204, 204);
+}
+
+#navbar .process p.color {
+  background-color: black;
+}
+
+/* header start */
+.header_div {
+  display: flex;
+  margin-top: 120px;
+  background-color: rgb(237, 237, 237);
+  /* padding: 4em 4em 0px 4em; */
+  padding: 4em;
+  justify-content: space-between;
+}
+
+.header_div .flex {
+  display: flex;
+  justify-content: space-between;
+  margin: 1.2em 0px;
+}
+.header_div .flex div {
+  width: 49%;
+}
+
+.header_div .shipping {
+  width: 65%;
+  padding-right: 20em;
+  padding-left: 1em;
+  background-color: white;
+}
+.header_div .shipping label {
+  font-weight: bolder;
+  display: inline-block;
+  margin-bottom: 0.5em;
+}
+.header_div .shipping h2 {
+  border-bottom: 1px solid grey;
+  padding: 1.5em 0px;
+  margin-bottom: 1em;
+}
+.header_div .shipping input {
+  width: 100%;
+  padding: 0.5em;
+}
+
+.header_div .savecancelbtn {
+  justify-content: flex-start;
+  gap: 2em;
+}
+.savecancelbtn button {
+  font-size: 1.2rem;
+  padding: 0.4em 2.5em;
+}
+
+.savecancelbtn button:nth-child(1) {
+  background-color: black;
+  color: white;
+}
+.savecancelbtn button:nth-child(2) {
+  background-color: white;
+  border: 1px solid black;
+}
+
+.savecancelbtn button:nth-child(2):hover {
+  background-color: rgb(237, 237, 237);
+}
+
+/* coupon / promo code start */
+.coupon {
+  width: 34%;
+  padding: 1em;
+  height: fit-content;
+  background-color: white;
+}
+.coupon input {
+  padding: 0.7em;
+  border: none;
+  width: 70%;
+  background-color: rgb(237, 237, 237);
+}
+.coupon .apply button {
+  padding: 0.7em 2em;
+  border: none;
+  outline: none;
+  background-color: black;
+  color: white;
+}
+
+.coupon h2:nth-child(2) {
+  margin-top: 1.5em;
+  margin-bottom: 8px;
+}
+
+.coupon p {
+  font-size: 0.8rem;
+}
+.coupon .checkout {
+  color: white;
+  background-color: rgb(204, 204, 204);
+  width: 95%;
+  display: flex;
+  justify-content: center;
+  padding: 8px 0px;
+  font-size: 1.1em;
+  margin: 0 auto;
+  border: none;
+}
+
+.coupon .payment_div {
+  width: 100%;
+  height: 300px;
+  margin: 1em 0px;
+  border: 1px solid black;
+}
+.coupon .price2 .flex p {
+  color: red;
+  font-size: 1.2rem;
+}
+
+/* payment div start */
+.payment_div {
+  display: none;
+  padding: 1em;
+}
+.payment_div div {
+  display: flex;
+  justify-content: flex-start;
+  gap: 0.5em;
+}
+.payment_div h2 {
+  margin-bottom: 20px;
+}
+.payment_div > input {
+  margin: 4px 0px 25px 0px;
+}
+.payment_div div input {
+  width: 20%;
+  border: 1px outset black;
+}
+.payment_div .checkbox {
+  margin-top: 20px;
+  color: blue;
+  margin-left: -2em;
+}
+.payment_div span {
+  margin-left: -2em;
+}
+.payment_div p {
+  font-size: 1rem;
+}
+
+.payment_div button {
+  width: 100%;
+  background-color: black;
+  color: white;
+  padding: 0.7em 0px;
+}
+
+.done_div {
+  display: none;
+  width: 40%;
+  padding: 2em;
+  border: 1px solid black;
+  position: fixed;
+  text-align: center;
+  background-color: rgb(66, 179, 66);
+  color: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.done_div p:nth-child(1) {
+  text-align: right;
+  color: black;
+}

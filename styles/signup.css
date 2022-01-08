@@ -1,0 +1,86 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Roboto Condensed", sans-serif;
+}
+#navbar {
+  width: 90%;
+  margin: 20px auto;
+  padding: 1.5em 0.5em;
+  border-bottom: 2px solid red;
+}
+
+.header_div {
+  padding: 2em;
+  width: 60%;
+  text-align: center;
+  margin: 2em auto;
+}
+.header_div label {
+  font-size: 1.2rem;
+  width: 35%;
+  text-align: right;
+  display: inline-block;
+  margin-top: 20px;
+}
+.header_div input {
+  width: 40%;
+  padding: 0.4em;
+}
+.header_div p:nth-child(1) {
+  font-weight: bold;
+  font-size: 1.4rem;
+  margin-bottom: 40px;
+}
+.header_div p:nth-child(2) {
+  font-size: 1.2rem;
+  border-bottom: 1px solid grey;
+  text-align: left;
+  padding-bottom: 10px;
+}
+.header_div span {
+  color: red;
+  margin: 0px 0.7em;
+}
+.header_div input.name1,
+.header_div input.name2 {
+  width: 18%;
+  margin-right: 1em;
+}
+.header_div .phone {
+  margin: 1em 1.5em 1em 0px;
+}
+.header_div .term {
+  color: black;
+  font-size: 0.7rem;
+}
+.header_div .radio {
+  width: 2%;
+  margin-left: 20em;
+}
+.header_div a {
+  text-decoration: none;
+}
+.header_div .signup {
+  cursor: pointer;
+  background-color: black;
+  font-size: 1.1rem;
+  margin-top: 1.5em;
+  margin-left: 8em;
+  display: inline-block;
+  padding: 0.5em;
+  color: white;
+  width: 60%;
+}
+
+.loginp {
+  color: blue;
+  width: 20%;
+  margin: auto;
+  margin-top: -2em;
+  text-decoration: none;
+  display: block;
+  text-align: right;
+}

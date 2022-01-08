@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Order Confirm</title>
+
+    <link rel="stylesheet" href="./styles/order_confirm.css" />
+    <link rel="stylesheet" href="./styles/footer.css" />
+
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="navbar">
+      <img
+        src="https://img10.joybuy.com/tuangou/jfs/t1/24107/24/11739/7795/5c924d58Eae30ea8a/815e2989f4164d36.png"
+      />
+
+      <div class="process">
+        <p class="color">Submit Order</p>
+        <p class="payment">Payment</p>
+        <p class="done">Done</p>
+      </div>
+    </div>
+    <div class="header_div">
+      <div class="shipping">
+        <h2>Shipping Address</h2>
+        <label>Name *</label><br />
+        <input
+          type="text"
+          placeholder="only english characters are supported"
+        />
+        <div class="flex">
+          <div>
+            <label>Country/Region *</label><br />
+            <input type="text" placeholder="country" />
+          </div>
+          <div>
+            <label>State/Province *</label><br />
+            <input type="text" placeholder="State/Province" />
+          </div>
+        </div>
+        <label>Address line1 *</label><br />
+        <input
+          type="text"
+          placeholder="only english characters are supported"
+        /><br />
+        <br />
+        <label>Address line2</label><br />
+        <input
+          type="text"
+          placeholder="only english characters are supported"
+        />
+
+        <div class="flex">
+          <div>
+            <label>City:*</label><br />
+            <input
+              type="text"
+              placeholder="only english characters are supported"
+            />
+          </div>
+          <div>
+            <label>Zip/Post Code:*</label><br />
+            <input
+              type="text"
+              placeholder="only english characters are supported"
+            />
+          </div>
+        </div>
+
+        <label>Phone Number:*</label><br />
+        <input type="text" placeholder="Phone Number" />
+        <div class="flex savecancelbtn">
+          <button class="save">Save</button>
+          <button class="cancel">Cancel</button>
+        </div>
+      </div>
+      <div class="coupon">
+        <h2>Select Coupon</h2>
+        <h2>Coupon/Promo Code</h2>
+        <div class="apply">
+          <input type="text" placeholder="Enter code" /><button>Apply</button>
+        </div>
+        <br /><br />
+        <hr />
+        <br />
+        <h3>Other Details</h3>
+        <div>
+          <div class="flex">
+            <p>Total (1 item)</p>
+            <p class="price1"></p>
+          </div>
+          <div class="flex">
+            <p>Shipping and Delivery</p>
+            <p class="shipdelCharges"></p>
+          </div>
+          <div class="flex">
+            <p>Shipping Save</p>
+            <p>US$100</p>
+          </div>
+          <div class="flex">
+            <p>Discount Amount</p>
+            <p class="discountAmn">US$100</p>
+          </div>
+        </div>
+        <div class="price2">
+          <div class="flex">
+            <h3>Total</h3>
+            <p></p>
+          </div>
+          <button class="checkout">Check out</button>
+        </div>
+        <div class="payment_div">
+          <h2>Payment details</h2>
+          <p>card information</p>
+          <input class="cardnum" type="number" placeholder="card number" />
+          <div>
+            <input class="mm" type="number" placeholder="MM" /><input
+              class="yy"
+              type="number"
+              placeholder="YY"
+            />
+            <input class="cvv" type="number" placeholder="CVV" />
+          </div>
+          <div class="checkbox">
+            <input type="checkbox" /><span
+              >Billing address is same as shipping address</span
+            >
+          </div>
+          <br />
+          <button class="pay"></button>
+        </div>
+      </div>
+    </div>
+    <div class="done_div">
+      <p class="cross">X</p>
+      <h2>Thank You</h2>
+      <p>
+        Your purchase is successful<br />Your product is delivered soon
+        <br />Please keep available yourself on our website for latest update
+      </p>
+    </div>
+    <div class="footer"></div>
+    <script type="module">
+      var footers = document.querySelector(".footer");
+      import { footer } from "./components/footer.js";
+      footers.innerHTML = footer();
+
+      var savebtn = document.querySelector(".save");
+      var cancelbtn = document.querySelector(".cancel");
+      var input = document.querySelectorAll(".header_div .shipping input");
+      var applybtn = document.querySelector(".apply button");
+      var applyInput = document.querySelector(".apply input");
+      var checkOut = document.querySelector(".coupon .checkout");
+
+      var price2 = document.querySelector(".coupon .price2 .flex p");
+      var price1 = document.querySelector(".coupon .flex .price1");
+      var shipdelcharge = document.querySelector(
+        ".coupon .flex .shipdelCharges"
+      );
+      var discountAmn = document.querySelector(".coupon .discountAmn");
+
+      let payment_div = document.querySelector(".payment_div");
+
+      var data = localStorage.getItem("eleData");
+      data = JSON.parse(data);
+
+      price2.innerText = `US$${data.pri}`;
+      price1.innerText = `US$${data.pri}`;
+      shipdelcharge.innerText = `US$${data.pri}+${100}`;
+
+      var count = 0;
+      savebtn.addEventListener("click", () => {
+        var value = true;
+        for (var i = 0; i < input.length; i++) {
+          if (input[i].value == "") {
+            value = false;
+            alert("all fields are mendatory");
+            break;
+          }
+        }
+        if (value == true) {
+          count = 1;
+
+          payment_div.style.display = "block";
+
+          var payment = document.querySelector(".process .payment");
+          payment.style.backgroundColor = "black";
+          alert("Your data is saved");
+        }
+      });
+      cancelbtn.addEventListener("click", () => {
+        for (var i = 0; i < input.length; i++) {
+          input[i].value = "";
+        }
+        if (count != 1) {
+          count = 0;
+        }
+      });
+      var counter = 0;
+      var flag = 0;
+      applybtn.addEventListener("click", () => {
+        if (count == 1) {
+          if (applyInput.value == "") {
+            if (counter != 0) {
+              alert("already applied");
+            } else {
+              alert("try again");
+            }
+          } else if (applyInput.value == "masai30") {
+            ++counter;
+            if (counter > 1) {
+              alert("already applied");
+            }
+            flag = 1;
+            if (counter == 1) {
+              applyInput.value = "";
+              alert("coupon applied");
+            }
+
+            checkOut.style.backgroundColor = "green";
+          } else {
+            counter = 0;
+            alert("coupon code expired");
+          }
+        } else {
+          alert("your address details are not filled");
+        }
+      });
+      var pay = document.querySelector(".pay");
+      pay.innerText = `US$${data.pri}`;
+      checkOut.addEventListener("click", () => {
+        if (flag == 1 && count == 1) {
+          let discprice = data.pri * 0.3;
+          let dprice = discprice + 100;
+          let allprice = data.pri - discprice;
+          price2.innerText = `US$${allprice}`;
+          discountAmn.innerText = `US${dprice}`;
+          pay.innerText = `Pay US$${allprice}`;
+        }
+      });
+
+      let cardnum = document.querySelector(".cardnum");
+      let mm = document.querySelector(".mm");
+      let yy = document.querySelector(".yy");
+      var cvv = document.querySelector(".cvv");
+
+      pay.addEventListener("click", () => {
+        if (
+          cardnum.value == "" ||
+          mm.value == "" ||
+          yy.value == "" ||
+          cvv.value == ""
+        ) {
+          alert("all fields are mendatory");
+        } else {
+          var done = document.querySelector(".done");
+          var doneDiv = document.querySelector(".done_div");
+          doneDiv.style.display = "block";
+          done.style.backgroundColor = "black";
+        }
+      });
+      var cross = document.querySelector(".cross");
+      cross.addEventListener("click", () => {
+        window.location.href = "index.html";
+      });
+    </script>
+  </body>
+</html>

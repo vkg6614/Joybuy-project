@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/footer.css" />
+    <link rel="stylesheet" href="./styles/signup.css" />
+
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="navbar">
+      <img
+        src="https://img10.joybuy.com/tuangou/jfs/t1/24107/24/11739/7795/5c924d58Eae30ea8a/815e2989f4164d36.png"
+      />
+    </div>
+    <div class="header_div">
+      <p>Register</p>
+      <p>Account Settings</p>
+
+      <label>Email Address</label><span>*</span
+      ><input type="email" placeholder="Email address" /><br />
+      <label>Password</label><span>*</span
+      ><input type="password" placeholder="Password" /><br />
+      <label>Confirm Password</label><span>*</span
+      ><input type="password" placeholder="Enter password again" /><br />
+      <label>Contact person</label><span>*</span
+      ><input class="name1" type=" text" placeholder="First name" /><input
+        class="name2"
+        type=" text"
+        placeholder="Last name"
+      /><br />
+      <label class="phone">Contact Phone Number</label
+      ><input type="number" /><br />
+      <input type="radio" class="radio" /><span class="term">
+        By selecting Register you agree you've read and accepted our
+        <a href="#">Terms & Conditions.</a> Please see our
+        <a href="#">Privacy Policy</a> for information regarding the processing
+        of your data. </span
+      ><br />
+      <button class="signup">Register</button>
+    </div>
+    <div>
+      <a class="loginp" href="login.html">Click here for LogIn </a>
+    </div>
+    <div class="footer"></div>
+    <script type="module">
+      var footers = document.querySelector(".footer");
+      import { footer } from "./components/footer.js";
+      footers.innerHTML = footer();
+      var signup = document.querySelector(".signup");
+      var loginp = document.querySelector(".loginp");
+      signup.addEventListener("click", async (e) => {
+        var inputValue = document.querySelectorAll(".header_div input");
+        var signData = {
+          id: inputValue[0].value,
+          pass: inputValue[1].value,
+          passConfirm: inputValue[2].value,
+          firstN: inputValue[3].value,
+          lastN: inputValue[4].value,
+          contact: inputValue[5].value,
+        };
+        try {
+          if (
+            signData.id == "" ||
+            signData.pass == "" ||
+            signData.passConfirm == "" ||
+            signData.firstN == "" ||
+            signData.lastN == ""
+          ) {
+            alert("please fill all the madatory fields");
+          } else {
+            if (signData.pass == signData.passConfirm) {
+              var res = await fetch(`http://localhost:3000/api/products`, {
+                method: "POST",
+                body: JSON.stringify(signData),
+                headers: {
+                  "Content-Type": "application/json",
+                },
+              });
+              var data = await res.json();
+
+              alert("registration successfull, Go for login");
+            } else {
+              alert("Your password doesn't match");
+            }
+          }
+        } catch (e) {
+          alert("email id is already registered");
+        }
+      });
+    </script>
+  </body>
+</html>

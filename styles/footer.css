@@ -1,0 +1,99 @@
+/* footer start */
+body {
+  font-family: "Roboto Condensed", sans-serif;
+}
+.footer {
+  width: 100%;
+  margin-top: 100px;
+  background-color: rgb(224, 223, 223);
+}
+.footer .top-footer {
+  margin: auto;
+  border-bottom: 1px solid grey;
+  width: 89%;
+  display: flex;
+  gap: 2em;
+  justify-content: space-between;
+  text-align: center;
+}
+.top-footer div {
+  padding: 3em 0px;
+  width: 18%;
+}
+.top-footer div p {
+  font-size: 1.5rem;
+}
+.top-footer .material-icons {
+  font-size: 5rem;
+}
+.top-footer div h3 {
+  font-size: 2rem;
+  margin-top: 1em;
+  margin-bottom: 1.2em;
+}
+
+.about {
+  width: 89%;
+  font-size: 1.5rem;
+  margin: auto;
+  padding-bottom: 2em;
+  border-bottom: 1px solid grey;
+}
+.about h3 {
+  margin: 1em 0px;
+}
+.about p {
+  line-height: 1.2em;
+}
+
+/* footer bottom start */
+.footer-bottom {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  margin-top: 2em;
+}
+.footer-bottom .bottom-1 div {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.bottom-1 div img {
+  width: 100px;
+  object-fit: cover;
+}
+.bottom-2 div {
+  display: flex;
+  align-items: center;
+}
+.footer-bottom span {
+  font-weight: bold;
+  margin-right: 0.5em;
+  font-size: 1.8rem;
+}
+.bottom-2 div #input-box {
+  width: 70%;
+  margin-left: 1em;
+  padding: 0.5em;
+  border: none;
+}
+.bottom-2 div img {
+  width: 85%;
+}
+.bottom-2 div button {
+  padding: 0.5em;
+  background-color: red;
+  color: white;
+  border: none;
+}
+@media (max-width: 850px) {
+  .footer-bottom {
+    display: none;
+  }
+}
+@media (max-width: 850px) {
+  .footer {
+    display: none;
+  }
+}

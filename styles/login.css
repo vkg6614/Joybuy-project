@@ -1,0 +1,63 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Roboto Condensed", sans-serif;
+}
+#navbar {
+  width: 90%;
+  margin: 20px auto;
+  padding: 1.5em 0.5em;
+  border-bottom: 2px solid red;
+}
+.header_div {
+  position: relative;
+  width: 90%;
+  z-index: 1;
+  border: 1px solid black;
+  margin: 0 auto;
+}
+.header_div img {
+  height: 85vh;
+  display: inline-block;
+  width: 100%;
+  z-index: -5;
+}
+.header_div .login_div {
+  width: 45%;
+  left: 28%;
+  background-color: white;
+  top: 3%;
+  padding: 1.5em;
+  z-index: 5;
+  height: 80vh;
+  position: absolute;
+}
+.header_div .login_div div {
+  margin-bottom: 2em;
+}
+.login_div input {
+  width: 100%;
+  border: none;
+  padding-bottom: 0.6em;
+  border-bottom: 1px solid black;
+  outline: none;
+}
+.login_div button {
+  width: 100%;
+  margin-top: 0.4em;
+  font-size: 1.1rem;
+  padding: 0.5em 0px;
+}
+.login_div button:nth-child(1) {
+  background-color: black;
+  color: white;
+}
+.login_div button:nth-child(2) {
+  background-color: white;
+}
+.login_div div .forgot {
+  color: blue;
+  text-align: right;
+}

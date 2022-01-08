@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/login.css" />
+    <link rel="stylesheet" href="./styles/footer.css" />
+
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="navbar">
+      <img
+        src="https://img10.joybuy.com/tuangou/jfs/t1/24107/24/11739/7795/5c924d58Eae30ea8a/815e2989f4164d36.png"
+      />
+    </div>
+    <div class="header_div">
+      <img
+        src="https://img12.joybuy.com/eptjshop/jfs/t1/159565/11/9224/132072/603cc1a1Ecb5a7c79/5da39b6c58594eb6.jpg.dpg"
+      />
+      <div class="login_div">
+        <div><h2>Log in</h2></div>
+        <div><input type="text" placeholder="Email address" id="email" /></div>
+        <div>
+          <input type="password" placeholder="Password" id="password" />
+          <p class="forgot">Forgot your password?</p>
+        </div>
+        <div><button>Log in</button></div>
+        <div>
+          <p>New to Joybuy?</p>
+          <button class="register">Register</button>
+        </div>
+      </div>
+    </div>
+    <div class="footer"></div>
+    <script type="module">
+      var footers = document.querySelector(".footer");
+      import { footer } from "./components/footer.js";
+      footers.innerHTML = footer();
+      var registers = document.querySelector(".register");
+      registers.addEventListener("click", () => {
+        window.location.href = "signup.html";
+      });
+      var login = document.querySelector(".login_div button");
+
+      login.addEventListener("click", async () => {
+        var value = false;
+        var emailId = document.getElementById("email").value;
+        var password = document.getElementById("password").value;
+        let res = await fetch(`http://localhost:3000/api/products`);
+        let data = await res.json();
+        for (var i = 0; i < data.length; i++) {
+          if (data[i].id == emailId && data[i].pass == password) {
+            window.location.href = "order_confirm.html";
+            value = true;
+            break;
+          } else {
+            value = false;
+          }
+        }
+        if (value == false) {
+          alert("account doesn't exist");
+        }
+      });
+    </script>
+  </body>
+</html>
