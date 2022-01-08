@@ -4,6 +4,7 @@ This is the brief description of my project which was made as a part of the thir
 construct week **@Masai School** for the **Full-stack Web Development** course.
 
 URL_Link: [www.joybuy.com](https://joy-buy-d2acuj9bw-vkg6614-gmailcom.vercel.app/)
+deployment: https://joy-buy-d2acuj9bw-vkg6614-gmailcom.vercel.app/
 
 ## About Joybuy:
 Joybuy is an E-Commerce website where any individuals can purchase different categories products.
